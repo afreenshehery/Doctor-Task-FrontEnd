@@ -1,0 +1,178 @@
+<p>patient-post works!</p>
+<h1 class="baground-color :primary">patient Details</h1>
+
+<mat-card>
+  <form (submit)="onLogin(signupForm)" #signupForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        required
+        name="patientName"
+        [ngModel]="patientData?.patientName"
+        type="text"
+        placeholder="add patientName"
+        #patientName="ngModel"
+      />
+      <mat-error *ngIf="patientName.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        name="patientLastname"
+        [ngModel]="patientData?.patientLastname"
+        matInput
+        placeholder="inter patientLastname"
+        #patientLastname="ngModel"
+      />
+      <mat-error *ngIf="patientLastname.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        name="patientAge"
+        [ngModel]="patientData?.patientAge"
+        matInput
+        placeholder="inter patientAge"
+        #patientAge="ngModel"
+      />
+      <mat-error *ngIf="patientAge.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        name="patientMobile"
+        [ngModel]="patientData?.patientMobile"
+        matInput
+        placeholder="inter patientMobile"
+        #patientMobile="ngModel"
+      />
+      <mat-error *ngIf="patientMobile.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        name="Gender"
+        [ngModel]="patientData?.Gender"
+        matInput
+        placeholder="inter Gender"
+        #Gender="ngModel"
+      />
+      <mat-error *ngIf="Gender.invalid">Please enter a valid emial.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        name="disease"
+        [ngModel]="patientData?.disease"
+        matInput
+        placeholder="inter disease"
+        #disease="ngModel"
+      />
+      <mat-error *ngIf="disease.invalid">Please enter a valid emial.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        name="treatment"
+        [ngModel]="patientData?.treatment"
+        matInput
+        placeholder="inter treatment"
+        #treatment="ngModel"
+      />
+      <mat-error *ngIf="treatment?.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        name="patientType"
+        [ngModel]="patientData?.patientType"
+        matInput
+        placeholder="inter patientType"
+        #patientType="ngModel"
+      />
+      <mat-error *ngIf="patientType.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        name="paidPayment"
+        [ngModel]="patientData?.paidPayment"
+        matInput
+        placeholder="inter paidPayment"
+        #paidPayment="ngModel"
+      />
+      <mat-error *ngIf="paidPayment.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        name="duePayment"
+        [ngModel]="patientData?.duePayment"
+        matInput
+        placeholder="inter duePayment"
+        #duePayment="ngModel"
+      />
+      <mat-error *ngIf="duePayment.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        name="patientTreatmentDate"
+        [ngModel]="patientData?.patientTreatmentDate"
+        matInput
+        placeholder="inter patientTreatmentDate"
+        #patientTreatmentDate="ngModel"
+      />
+      <mat-error *ngIf="patientTreatmentDate.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+
+    <input
+      #singleInput
+      type="file"
+      name="patientPhoto"
+      (change)="selectImage($event)"
+    />
+
+    <button mat-raised-button type="submit" *ngIf="activeAddPatient">
+      Add Patient
+    </button>
+
+    <button mat-raised-button type="submit" *ngIf="activeEditPatient">
+      Save
+    </button>
+
+    <button class="back" mat-raised-button [routerLink]="['/patientList']">
+      back
+    </button>
+  </form>
+</mat-card>

@@ -1,0 +1,60 @@
+<h1>Edite details</h1>
+<div class="table">
+  <!-- *ngIf="token===shipper.id" -->
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col">FirstName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">AdminType</th>
+        <th scope="col">Address</th>
+
+        <th scope="col">Password</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let Admin of Doctor">
+      <tr *ngIf="ishospitalId == Admin.id">
+        <td>{{ Admin.adminName }}</td>
+        <td>{{ Admin.adminEmail }}</td>
+        <td>{{ Admin.adminMobile }}</td>
+        <td>{{ Admin.adminType }}</td>
+        <td>{{ Admin.adminAddress }}</td>
+        <td>{{ Admin.adminPassword }}</td>
+
+        <td>
+          <button
+            mat-button
+            style="color: blue"
+            [routerLink]="['/reqEdit', Admin.id]"
+          >
+            Edit Profile
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="adminType == 'mainDoctor'">
+    <button
+      class="back"
+      mat-raised-button
+      type="submit"
+      [routerLink]="['/menu']"
+    >
+      Go Back
+    </button>
+  </div>
+
+  <div *ngIf="adminType == 'assistantDoctor'">
+    <button
+      class="back"
+      mat-raised-button
+      type="submit"
+      [routerLink]="['/menu1']"
+    >
+      Go Back
+    </button>
+  </div>
+</div>

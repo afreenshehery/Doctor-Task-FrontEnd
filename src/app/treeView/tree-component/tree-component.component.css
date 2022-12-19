@@ -1,0 +1,9 @@
+.container{
+      background-color: aqua;
+      color:white;
+      height: 10rem;
+      width:10rem;
+      resize: both;
+      overflow:auto;
+      /* position:unset; */
+}

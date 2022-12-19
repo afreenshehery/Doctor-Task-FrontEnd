@@ -1,0 +1,97 @@
+<h1>Staff List</h1>
+
+<!-- *ngIf="token===shipper.id" -->
+<table class="table">
+  <thead>
+    <tr>
+      <!-- <th scope="col">#</th> -->
+      <th scope="col">staffName</th>
+      <th scope="col">staffLastname</th>
+      <th scope="col">staffMobileNumber</th>
+      <th scope="col">staffAddress</th>
+      <th scope="col">staffBloodgroup</th>
+      <th scope="col">staffAge</th>
+      <th scope="col">gender</th>
+      <th scope="col">staffPost</th>
+      <th scope="col">staffJoiningDate</th>
+      <th scope="col">salary</th>
+      <th scope="col">patientTreatmentdate</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody
+    *ngFor="
+      let post of staffs | paginate: { itemsPerPage: 2, currentPage: p };
+      let i = index
+    "
+  >
+    <tr>
+      <td>{{ post.staffName }}</td>
+      <td>{{ post.staffLastname }}</td>
+      <td>{{ post.staffMobileNumber }}</td>
+      <td>{{ post.staffAddress }}</td>
+      <td>{{ post.staffBloodgroup }}</td>
+      <td>{{ post.staffAge }}</td>
+      <td>{{ post.gender }}</td>
+      <td>{{ post.staffPost }}</td>
+      <td>{{ post.staffJoiningDate }}</td>
+      <td>{{ post.salary }}</td>
+      <td>{{ post.patientTreatmentdate }}</td>
+      <td>
+        <a mat-button color="primary" [routerLink]="['/editee', post.id]"
+          >EDIT</a
+        >
+        <button mat-button color="warn" (click)="onDelete(post.id)">
+          DELETE
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h5 class="" *ngIf="staffs?.length <= 0">No staffs added yet!</h5>
+
+<button class="creat" mat-button [routerLink]="['/postStaff']">
+  Create post
+</button>
+<button class="back" mat-raised-button type="submit" [routerLink]="['/menu']">
+  Go Back
+</button>
+
+<div class="text-right">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+<!--    
+<mat-accordion multi="true">
+  <div class="list">
+    <mat-expansion-panel *ngFor="let post of staffs">
+      <mat-expansion-panel-header>
+        {{ post.staffName }}
+      </mat-expansion-panel-header>
+
+      <p>{{ post.staffLastname }}</p>
+      <p>{{ post.staffMobileNumber }}</p>
+      <p>{{ post.staffAddress }}</p>
+      <p>{{ post.staffBloodgroup }}</p>
+      <p>{{ post.staffAge }}</p>
+      <p>{{ post.gender }}</p>
+      <p>{{ post.staffPost }}</p>
+      <p>{{ post.staffJoiningDate }}</p>
+      <p>{{ post.salary }}</p>
+
+      <mat-action-row>
+        <a mat-button color="primary" [routerLink]="['/editee', post.id]"
+          >EDIT
+        </a>
+        <button mat-button color="warn" (click)="onDelete(post.id)">
+          DELETE
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </div>
+  <button class="creat" mat-button [routerLink]="['/postStaff']">
+    Create post
+  </button>
+  <button class="back" mat-button [routerLink]="['/menu']">Go Back</button>
+</mat-accordion> -->
+<!-- </button> -->

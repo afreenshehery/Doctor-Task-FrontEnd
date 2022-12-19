@@ -1,0 +1,44 @@
+img{
+width:40%;
+margin-left: 30%;
+margin-top: 5%;
+}
+
+.card{
+      height:30rem;
+      background-color:palegreen;
+      margin-left: 35%;
+      margin-top: 14rem;
+      
+}
+.text{
+      margin-top: 3rem;
+      margin-left: 20px;
+      text-align: center;
+}
+.reg{
+      margin-top: 2rem;
+      margin-left: 30%;
+      border-radius: 15px;
+      border: none;
+      width: 10rem;
+      height: 3rem;
+     background-color:  #0095ff9f!important;}
+
+     .log{
+      margin-left: 30%;
+      border-radius: 15px;
+      border: none;
+      width: 10rem;
+      height: 3rem;
+      margin-top: 5%;
+      background: none;
+     }
+     .map{
+      margin-top: 0.1rem;
+      margin-left: 30%;
+      border-radius: 15px;
+      border: none;
+      width: 10rem;
+      height: 3rem;
+     background-color:  #0095ff9f!important;}

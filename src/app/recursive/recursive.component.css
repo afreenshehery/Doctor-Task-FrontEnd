@@ -1,0 +1,15 @@
+.table{
+      /* margin: 30%; */
+      width: 30%;
+      margin-left: 30%;
+
+}
+.sam{
+      margin: 30%;
+}
+.tramp{
+      box-shadow: 1px solid gray;
+}
+mat-card{
+      border: solid 1px black;
+}

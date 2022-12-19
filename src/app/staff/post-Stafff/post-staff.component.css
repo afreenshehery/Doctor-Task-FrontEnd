@@ -1,0 +1,34 @@
+mat-form-field
+{
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+mat-card{
+      border: solid palegreen;
+      width: 30%;
+      margin-left: 35%;
+      margin-top:1%;
+      width: -10%;
+}
+h1{
+     
+      width: 20%;
+      height: 5rem;
+      font-size: 3rem;
+      text-align: center;
+      margin-left: 40%;
+
+}
+button{
+      border: solid palegreen;
+      
+      background-color:palegreen ;
+     
+}
+.back{
+      background-color: palegreen;
+      float:right;
+}

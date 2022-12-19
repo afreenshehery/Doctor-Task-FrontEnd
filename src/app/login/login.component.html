@@ -1,0 +1,68 @@
+<h1 class="baground-color :primary">Log In</h1>
+
+<mat-card>
+  <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        required
+        AdminEmail
+        name="AdminEmail"
+        ngModel
+        type="text"
+        placeholder="AdminEmail"
+        #AdminEmail="ngModel"
+      />
+      <mat-error *ngIf="AdminEmail.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-select [(value)]="selected">
+        <mat-option value="MainDoctor">MainDoctor</mat-option>
+        <mat-option value="assistantDoctor">asistantDoctor</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        AdminPassword
+        name="AdminPassword"
+        ngModel
+        matInput
+        placeholder="AdminPassword"
+        #AdminPassword="ngModel"
+      />
+      <mat-error *ngIf="AdminPassword.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+
+    <button class="login" mat-raised-button type="submit">Login</button>
+  </form>
+</mat-card>
+<button class="back" mat-raised-button type="submit" [routerLink]="['']">
+  Back
+</button>
+
+<h1>ajljdljkl</h1>
+<div class="hee" *ngFor="let message of messages">
+  {{ message }}
+</div>
+<div>
+  <input
+    [(ngModel)]="message"
+    (keyup)="$event.keyCode == 13 && sendMessage()"
+  />
+  <button (click)="sendMessage()">Send</button>
+</div>
+<h1>{{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<!-- <agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map> -->

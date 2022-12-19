@@ -1,0 +1,104 @@
+<h1 class="baground-color :primary">sign-Up</h1>
+
+<mat-card>
+  <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        required
+        AdminName
+        name="AdminName"
+        [ngModel]="doctorInfo?.AdminName"
+        type="text"
+        placeholder="AdminName"
+        #AdminName="ngModel"
+      />
+      <mat-error *ngIf="AdminName.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        AdminEmail
+        name="AdminEmail"
+        [ngModel]="doctorInfo?.AdminEmail"
+        matInput
+        placeholder="AdminEmail"
+        #AdminEmail="ngModel"
+      />
+      <mat-error *ngIf="AdminEmail.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        AdminMobile
+        name="AdminMobile"
+        [ngModel]="doctorInfo?.AdminMobile"
+        matInput
+        placeholder="AdminMobile"
+        #AdminMobile="ngModel"
+      />
+      <mat-error *ngIf="AdminMobile.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-select [(value)]="selected">
+        <mat-option value="mainDoctor">MainDoctor</mat-option>
+        <mat-option value="assistantDoctor">asistantDoctor</mat-option>
+      </mat-select>
+      <mat-error *ngIf="AdminMobile.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        AdminAddress
+        name="AdminAddress"
+        [ngModel]="doctorInfo?.AdminAddress"
+        matInput
+        placeholder="AdminAddress"
+        #AdminAddress="ngModel"
+      />
+      <mat-error *ngIf="AdminAddress.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="password"
+        required
+        AdminPassword
+        name="AdminPassword"
+        [ngModel]="doctorInfo?.AdminPassword"
+        matInput
+        placeholder="AdminPassword"
+        #AdminPassword="ngModel"
+      />
+      <mat-error *ngIf="AdminPassword.invalid"
+        >Please enter a valid emial.</mat-error
+      >
+    </mat-form-field>
+    <button class="reg" mat-raised-button type="submit" *ngIf="activeSignUp">
+      sigUp
+    </button>
+    <button class="reg" mat-raised-button type="submit" *ngIf="activeEdit">
+      Save
+    </button>
+  </form>
+</mat-card>
+<button class="back" mat-raised-button type="submit" [routerLink]="['']">
+  Back
+</button>

@@ -1,0 +1,43 @@
+<!-- <mat-card>
+  <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        required
+        name
+        name="name"
+        ngModel
+        type="text"
+        placeholder="name"
+        #name="ngModel"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        required
+        age
+        name="age"
+        ngModel
+        type="text"
+        placeholder="age"
+        #age="ngModel"
+      />
+    </mat-form-field>
+    <br />
+    <div *ngIf="array.length > 0"> -->
+<!-- <button class="reg" mat-raised-button type="submit">save</button> -->
+<!-- </div> -->
+<!-- </form>
+</mat-card> -->
+
+<div id="mainDiv" *ngFor="let comment of comments?.reverse()">
+  <mat-card>
+    <label>{{ comment.text }}</label>
+    <br />
+    <input [(ngModel)]="text" cols="80" rows="7" />
+
+    <button type="submit" (click)="addComment(comment)">+</button>
+    <app-profile [comments]="comment.anwsers"> </app-profile>
+  </mat-card>
+</div>

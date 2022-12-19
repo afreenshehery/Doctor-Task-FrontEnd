@@ -1,0 +1,32 @@
+mat-form-field
+{
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+mat-card{
+      border: solid palegreen;
+      width: 20%;
+      margin-left: 40%;
+      margin-top: 4%;
+}
+h1{
+     
+      width: 20%;
+      height: 5rem;
+      font-size: 3rem;
+      text-align: center;
+      margin-left: 40%;
+
+}
+.reg{
+  background-color:  palegreen;    
+}
+.back{
+  width: 20%;
+  background-color:  palegreen;  
+  margin-top: 2%; 
+  margin-left: 40%; 
+}

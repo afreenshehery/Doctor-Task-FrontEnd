@@ -1,0 +1,31 @@
+
+.creat{
+      background-color: palegreen;
+      margin-left: 10%;
+      margin-left: 3%;
+}
+.back{
+      background-color: palegreen;
+      
+      margin-top: 1%;
+      margin-left:4%;
+}
+h1{
+text-align: center;
+text-decoration:underline solid palegreen;
+}
+
+
+.text-right{
+      margin-top: 2%;
+}
+
+thead{
+      background-color:palegreen ;
+
+}
+
+.table{
+      width: 90%;
+      margin: 5%;
+}

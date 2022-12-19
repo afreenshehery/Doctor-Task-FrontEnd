@@ -1,0 +1,123 @@
+<h1>Patient List</h1>
+
+<div class="table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">patientName</th>
+        <th scope="col">patientLastname</th>
+        <th scope="col">patientAge</th>
+        <th scope="col">Gender</th>
+        <th scope="col">treatment</th>
+        <th scope="col">patientType</th>
+        <th scope="col">paidPayment</th>
+        <th scope="col">duePayment</th>
+        <th scope="col">patientTreatmentDate</th>
+        <th scope="col">patientPhoto</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody
+      *ngFor="
+        let post of patiets | paginate: { itemsPerPage: 2, currentPage: p };
+        let i = index
+      "
+    >
+      <tr>
+        <td>{{ post.patientName }}</td>
+        <td>{{ post.patientLastname }}</td>
+
+        <td>{{ post.patientAge }}</td>
+        <td>{{ post.Gender }}</td>
+        <td>{{ post.treatment }}</td>
+        <td>{{ post.patientType }}</td>
+        <td>{{ post.paidPayment }}</td>
+        <td>{{ post.duePayment }}</td>
+        <td>{{ post.patientTreatmentDate }}</td>
+        <td>{{ post.patientPhoto }}</td>
+        <td>
+          <a mat-button color="primary" [routerLink]="['/edit', post.id]"
+            >EDIT</a
+          >
+          <button mat-button color="warn" (click)="onDelete(post.id)">
+            DELETE
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="" *ngIf="patiets?.length <= 0">No patients added yet!</h5>
+</div>
+<div class="row">
+  <div class="col-2">
+    <button class="creat" mat-button [routerLink]="['/patient']">
+      Create post
+    </button>
+  </div>
+  <div class="col-2" *ngIf="adminType == 'mainDoctor'">
+    <button
+      class="back"
+      mat-raised-button
+      type="submit"
+      [routerLink]="['/menu']"
+    >
+      Go Back
+    </button>
+  </div>
+
+  <div class="col-2" *ngIf="adminType == 'assistantDoctor'">
+    <button
+      class="back"
+      mat-raised-button
+      type="submit"
+      [routerLink]="['/menu1']"
+    >
+      Go Back
+    </button>
+  </div>
+
+  <div class="col-2" class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
+<!-- <mat-accordion multi="true">
+  <div class="list">
+    <mat-expansion-panel *ngFor="let post of patiets">
+      <mat-expansion-panel-header>
+        {{ post.patientName }}
+      </mat-expansion-panel-header>
+
+      <p>{{ post.patientLastname }}</p>
+      <p>{{ post.patientAge }}</p>
+      <p>{{ post.patientMobile }}</p>
+      <p>{{ post.Gender }}</p>
+      <p>{{ post.disease }}</p>
+      <p>{{ post.treatment }}</p>
+      <p>{{ post.patientType }}</p>
+      <p>{{ post.paidPayment }}</p>
+      <p>{{ post.duePayment }}</p>
+      <p>{{ post.patientTreatmentDate }}</p>
+
+      <mat-action-row>
+        <a mat-button color="primary" [routerLink]="['/edit', post.id]">EDIT</a>
+        <button mat-button color="warn" (click)="onDelete(post.id)">
+          DELETE
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </div>
+  <button class="creat" mat-button [routerLink]="['/patient']">
+    Create post
+  </button>
+  <button
+    class="back"
+    mat-raised-button
+    type="submit"
+    [routerLink]="['/menu1']"
+  >
+    Go Back
+  </button>
+</mat-accordion>
+<br /> -->
+<!-- </div>
+</div> -->

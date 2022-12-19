@@ -1,0 +1,65 @@
+<h1>Admin is mainDoctor</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="https://app.addmin.com/static/media/logo.dc9be51a.png"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">staff Details...</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn" [routerLink]="['/stafflist']">Add Staff</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm">
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="https://app.addmin.com/static/media/logo.dc9be51a.png"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">patient Details....</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn" [routerLink]="['/patientList']"
+            >Add patient</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm">
+      <div class="card" style="width: 18rem">
+        <img
+          class="card-img-top"
+          src="https://app.addmin.com/static/media/logo.dc9be51a.png"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Amaim Details....</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn" [routerLink]="['/editeDoctorProfile']"
+            >Edit Profile</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="back" mat-raised-button type="submit" [routerLink]="['']">
+  Go Back
+</button>
